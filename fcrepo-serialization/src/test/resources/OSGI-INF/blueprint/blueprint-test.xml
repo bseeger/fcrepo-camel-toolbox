@@ -23,14 +23,8 @@
         <cm:property name="serialization.mimeType" value="text/turtle"/>
         <cm:property name="serialization.extension" value="ttl"/>
         <cm:property name="audit.container" value="/audit"/>
-        <cm:property name="jms.brokerUrl" value="tcp://localhost:61616"/>
     </cm:default-properties>
   </cm:property-placeholder>
-
-  <bean id="broker" class="org.apache.activemq.camel.component.ActiveMQComponent">
-     <property name="brokerURL" value="${jms.brokerUrl}"/>
-  </bean>
-
 
   <!-- component-wide configuration of fcrepo -->
   <bean id="fcrepo" class="org.fcrepo.camel.FcrepoComponent">

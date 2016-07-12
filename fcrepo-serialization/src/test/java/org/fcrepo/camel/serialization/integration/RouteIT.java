@@ -90,13 +90,11 @@ public class RouteIT extends CamelBlueprintTestSupport {
 
     @Override
     protected Properties useOverridePropertiesWithPropertiesComponent() {
-        final String jmsPort = System.getProperty("fcrepo.dynamic.jms.port", "61616");
         final Properties props = new Properties();
         props.put("fcrepo.baseUrl", "localhost:" + FCREPO_PORT + "/fcrepo/rest");
         props.put("serialization.descriptions", "target/serialization/descriptions");
         props.put("serialization.binaries", "target/serialization/binaries");
         props.put("serialization.stream", "direct:foo");
-        props.put("jms.brokerUrl", "tcp://localhost:" + jmsPort);
         props.put("input.stream", "direct:start");
         return props;
     }
